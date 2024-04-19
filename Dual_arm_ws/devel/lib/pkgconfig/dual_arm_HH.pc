@@ -1,0 +1,8 @@
+prefix=/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_ws/devel
+
+Name: dual_arm_HH
+Description: Description of dual_arm_HH
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

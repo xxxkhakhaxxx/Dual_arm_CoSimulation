@@ -1,0 +1,2 @@
+dual_arm_hh
+-DCATKIN_DEVEL_PREFIX=/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_ws/devel -DCMAKE_INSTALL_PREFIX=/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_ws/install -G Unix Makefiles
