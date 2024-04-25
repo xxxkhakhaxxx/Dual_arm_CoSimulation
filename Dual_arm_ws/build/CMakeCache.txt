@@ -349,12 +349,6 @@ LSB_FOUND:BOOL=TRUE
 //Path to a program.
 LSB_RELEASE_EXECUTABLE:FILEPATH=/usr/bin/lsb_release
 
-//Value Computed by CMake
-Left_arm_1_BINARY_DIR:STATIC=/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_ws/build/Left_arm_1
-
-//Value Computed by CMake
-Left_arm_1_SOURCE_DIR:STATIC=/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_ws/src/Left_arm_1
-
 //Path to a program.
 NOSETESTS:FILEPATH=/usr/bin/nosetests3
 
@@ -410,22 +404,10 @@ class_loader_DIR:PATH=/opt/ros/noetic/share/class_loader/cmake
 cpp_common_DIR:PATH=/opt/ros/noetic/share/cpp_common/cmake
 
 //Value Computed by CMake
-dual_arm_HH_BINARY_DIR:STATIC=/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_ws/build/dual_arm_HH
-
-//Value Computed by CMake
-dual_arm_HH_SOURCE_DIR:STATIC=/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_ws/src/dual_arm_HH
-
-//Value Computed by CMake
 dual_arm_hh_BINARY_DIR:STATIC=/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_ws/build/dual_arm_hh
 
 //Value Computed by CMake
 dual_arm_hh_SOURCE_DIR:STATIC=/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_ws/src/dual_arm_hh
-
-//Value Computed by CMake
-dual_arm_robot_BINARY_DIR:STATIC=/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_ws/build/dual_arm_robot
-
-//Value Computed by CMake
-dual_arm_robot_SOURCE_DIR:STATIC=/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_ws/src/dual_arm_robot
 
 //The directory containing a CMake configuration file for gencpp.
 gencpp_DIR:PATH=/opt/ros/noetic/share/gencpp/cmake
