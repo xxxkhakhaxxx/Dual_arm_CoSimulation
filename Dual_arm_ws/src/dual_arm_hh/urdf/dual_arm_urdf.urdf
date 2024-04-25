@@ -204,7 +204,7 @@
   </link>
   <joint
     name="Joint_1_left"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0.18 0.475 -0.0875"
       rpy="0 0 0" />
@@ -214,6 +214,11 @@
       link="Link_1_left" />
     <axis
       xyz="0 0 1" />
+    <limit
+      lower="-3.142"
+      upper="3.142"
+      effort="300"
+      velocity="3" />
   </joint>
   <link
     name="Link_2_left">
@@ -257,7 +262,7 @@
   </link>
   <joint
     name="Joint_2_left"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0.52 0 0"
       rpy="0 0 0" />
@@ -267,6 +272,11 @@
       link="Link_2_left" />
     <axis
       xyz="0 0 1" />
+    <limit
+      lower="-3.142"
+      upper="3.142"
+      effort="300"
+      velocity="3" />
   </joint>
   <link
     name="Link_3_left">
@@ -310,7 +320,7 @@
   </link>
   <joint
     name="Joint_3_left"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0.59841 0 0.0455"
       rpy="0 0 0" />
@@ -320,6 +330,11 @@
       link="Link_3_left" />
     <axis
       xyz="0 0 1" />
+    <limit
+      lower="-3.142"
+      upper="3.142"
+      effort="300"
+      velocity="3" />
   </joint>
   <link
     name="Link_0_right">
@@ -416,7 +431,7 @@
   </link>
   <joint
     name="Joint_1_right"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0.18 0.475 -0.0875"
       rpy="0 0 0" />
@@ -426,6 +441,11 @@
       link="Link_1_right" />
     <axis
       xyz="0 0 -1" />
+    <limit
+      lower="-3.142"
+      upper="3.142"
+      effort="300"
+      velocity="3" />
   </joint>
   <link
     name="Link_2_right">
@@ -469,7 +489,7 @@
   </link>
   <joint
     name="Joint_2_right"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0.52 0 0"
       rpy="0 0 0" />
@@ -479,6 +499,11 @@
       link="Link_2_right" />
     <axis
       xyz="0 0 -1" />
+    <limit
+      lower="-3.142"
+      upper="3.142"
+      effort="300"
+      velocity="3" />
   </joint>
   <link
     name="Link_3_right">
@@ -522,7 +547,7 @@
   </link>
   <joint
     name="Joint_3_right"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0.59841 0 0.0455"
       rpy="0 0 0" />
@@ -532,5 +557,78 @@
       link="Link_3_right" />
     <axis
       xyz="0 0 -1" />
+    <limit
+      lower="-3.142"
+      upper="3.142"
+      effort="300"
+      velocity="3" />
   </joint>
+
+  <transmission name="Link_1_left_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+        <joint name="Joint_1_left">
+           <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+      <actuator name="Link_1_left_motor">
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+  </transmission>
+  <transmission name="Link_2_left_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+        <joint name="Joint_2_left">
+           <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+      <actuator name="Link_2_left_motor">
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+  </transmission>
+  <transmission name="Link_3_left_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+        <joint name="Joint_3_left">
+           <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+      <actuator name="Link_3_left_motor">
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+  </transmission>
+  <transmission name="Link_1_right_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+        <joint name="Joint_1_right">
+           <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+      <actuator name="Link_1_right_motor">
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+  </transmission>
+  <transmission name="Link_2_right_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+        <joint name="Joint_2_right">
+           <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+      <actuator name="Link_2_right_motor">
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+  </transmission>
+  <transmission name="Link_3_right_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+        <joint name="Joint_3_right">
+           <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+      <actuator name="Link_3_right_motor">
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+  </transmission>
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" 
+      filename="libgazebo_ros_control.so">
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+  </gazebo>
 </robot>

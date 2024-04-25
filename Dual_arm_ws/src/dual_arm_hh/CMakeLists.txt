@@ -8,7 +8,14 @@ project(dual_arm_hh)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  roscpp
+    message_generation
+    roscpp
+    rospy
+    std_msgs
+    geometry_msgs
+    urdf
+    xacro
+    message_generation
 )
 
 ## System dependencies are found with CMake's conventions
@@ -101,6 +108,11 @@ find_package(catkin REQUIRED COMPONENTS
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
+  CATKIN_DEPENDS
+    geometry_msgs
+    roscpp
+    rospy
+    std_msgs
 #  INCLUDE_DIRS include
 #  LIBRARIES dual_arm_hh
 #  CATKIN_DEPENDS roscpp
