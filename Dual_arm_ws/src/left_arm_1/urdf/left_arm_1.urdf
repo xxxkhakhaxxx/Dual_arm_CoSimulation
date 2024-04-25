@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="left_arm_1">
+
+  <link name="world"/>
+
+  <joint name="base_joint" type="fixed">
+    <parent link="world"/>
+    <child link="Link_0_left"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+  </joint>
+
+
+  <link
+    name="Link_0_left">
+    <inertial>
+      <origin
+        xyz="0.025725340467297 0.267068280658805 -0.000422587186137375"
+        rpy="0 0 0" />
+      <mass
+        value="44.0003903766507" />
+      <inertia
+        ixx="0.510206683960082"
+        ixy="-0.108718830428625"
+        ixz="0.00174239843209218"
+        iyy="0.693171643275509"
+        iyz="0.000898493242553072"
+        izz="0.722207260496373" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://left_arm_1/meshes/Link_0_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://left_arm_1/meshes/Link_0_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Link_1_left">
+    <inertial>
+      <origin
+        xyz="0.000353201939205738 0.220100104353883 -0.0818491698881181"
+        rpy="0 0 0" />
+      <mass
+        value="11.1204795622201" />
+      <inertia
+        ixx="0.528728735841248"
+        ixy="0.000101247989800482"
+        ixz="-0.000116486968337302"
+        iyy="0.0394927315423423"
+        iyz="-0.0449284723353491"
+        izz="0.539153696559962" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://left_arm_1/meshes/Link_1_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://left_arm_1/meshes/Link_1_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_1_left"
+    type="revolute">
+    <origin
+      xyz="0.18 0.0875 0.475"
+      rpy="1.5708 0 0" />
+    <parent      link="Link_0_left" />
+    <child       link="Link_1_left" />
+    <axis        xyz="0 0 1" />
+    <limit
+      lower="-0.7855"
+      upper="3.14"
+      effort="300"
+      velocity="3" />
+  </joint>
+  <link
+    name="Link_2_left">
+    <inertial>
+      <origin
+        xyz="0.188455579325395 0.0659691446373103 0.0881220901536073"
+        rpy="0 0 0" />
+      <mass
+        value="12.0535357513101" />
+      <inertia
+        ixx="0.0553008130625235"
+        ixy="-0.0224719405736704"
+        ixz="0.0010783984034821"
+        iyy="0.117941514496506"
+        iyz="0.000838834697566184"
+        izz="0.130938800545731" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://left_arm_1/meshes/Link_2_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://left_arm_1/meshes/Link_2_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_2_left"
+    type="revolute">
+    <origin
+      xyz="0.52 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="Link_1_left" />
+    <child
+      link="Link_2_left" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="3.14"
+      effort="300"
+      velocity="3" />
+  </joint>
+  <link
+    name="Link_3_left">
+    <inertial>
+      <origin
+        xyz="0.0170573856228415 -9.55062083862757E-08 0.0420061621566493"
+        rpy="0 0 0" />
+      <mass
+        value="0.828810415472124" />
+      <inertia
+        ixx="0.000897507811096277"
+        ixy="-1.36925090060582E-09"
+        ixz="-3.31460866810968E-08"
+        iyy="0.00135949204117928"
+        iyz="-5.18258479819187E-11"
+        izz="0.00136817872211274" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://left_arm_1/meshes/Link_3_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://left_arm_1/meshes/Link_3_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_3_left"
+    type="revolute">
+    <origin
+      xyz="0.59841457201508719 0.0 0.0455"
+      rpy="0 0 0" />
+    <parent
+      link="Link_2_left" />
+    <child
+      link="Link_3_left" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="300"
+      velocity="3" />
+  </joint>
+
+  <transmission name="Link_1_left_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Joint_1_left">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="Link_1_left_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="Link_2_left_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Joint_2_left">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="Link_2_left_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="Link_3_left_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Joint_3_left">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="Link_3_left_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+<!--
+  <gazebo>
+    <plugin name="control"
+            filename="libgazebo_ros_control.so">
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+  </gazebo>
+-->
+</robot>

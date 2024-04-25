@@ -1,0 +1,8 @@
+prefix=/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_ws/devel
+
+Name: Left_arm_1
+Description: Description of Left_arm_1
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

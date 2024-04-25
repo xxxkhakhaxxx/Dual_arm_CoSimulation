@@ -1,0 +1,26 @@
+<launch>
+  <arg
+    name="model" />
+  <param
+    name="robot_description"
+    textfile="$(find left_arm_1)/urdf/left_arm_1.urdf" />
+
+  <!-- Give 'fake' joins state via a GUI -->
+  <node
+    name="joint_state_publisher_gui"
+    pkg="joint_state_publisher_gui"
+    type="joint_state_publisher_gui" />
+
+  <!-- Take /joins_state topic and publish /tf topic (the transformation between frames) -->
+  <node
+    name="robot_state_publisher"
+    pkg="robot_state_publisher"
+    type="robot_state_publisher" />
+
+  <!-- Take /tf to Show in Rviz   -->
+  <node
+    name="rviz"
+    pkg="rviz"
+    type="rviz"
+    args="-d $(find left_arm_1)/urdf.rviz" />
+</launch>
