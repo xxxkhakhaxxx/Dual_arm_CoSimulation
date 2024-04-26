@@ -220,8 +220,8 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="-3.14"
-      upper="3.14"
+      lower="-2.1"
+      upper="2.1"
       effort="300"
       velocity="3" />
   </joint>
@@ -258,16 +258,11 @@
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
-<!--
+
   <gazebo>
-    <plugin name="control" filename="libgazebo_ros_control.so">
-      <robotNamespace>/</robotNamespace>
-    </plugin>
+      <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+          <robotNamespace>/</robotNamespace>
+      </plugin>
   </gazebo>
--->
-<gazebo>
-  <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-    <robotNamespace>/</robotNamespace>
-  </plugin>
-</gazebo>
+
 </robot>

@@ -1,6 +1,7 @@
 <launch>
-  <arg
-    name="model" />
+  <arg name="rviz_config" default="$(find left_arm_1)/rviz/left_arm_1_urdf.rviz"/>
+  <arg name="model" />
+  
   <param
     name="robot_description"
     textfile="$(find left_arm_1)/urdf/left_arm_1.urdf" />
@@ -22,5 +23,5 @@
     name="rviz"
     pkg="rviz"
     type="rviz"
-    args="-d $(find left_arm_1)/urdf.rviz" />
+    args="-d $(arg rviz_config)" />
 </launch>
