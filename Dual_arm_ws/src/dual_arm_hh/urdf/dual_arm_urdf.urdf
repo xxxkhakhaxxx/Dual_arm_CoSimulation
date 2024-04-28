@@ -13,24 +13,17 @@
     type="fixed">
     <parent link="world"/>
     <child link="Link_base"/>
-    <origin rpy="0 0 0" xyz="0.0 0.0 0.17"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
   </joint>
   
-  <link
-    name="Link_base">
+  <link name="Link_base">
     <inertial>
       <origin
         xyz="5.70342951597749E-17 -2.07083673802511E-18 0.16596933226608"
         rpy="0 0 0" />
       <mass
         value="175.473579205783" />
-      <inertia
-        ixx="187.97215343815"
-        ixy="-1.17446412092729E-15"
-        ixz="-1.67737550768459E-15"
-        iyy="8.44456814716498"
-        iyz="1.16719929426561E-15"
-        izz="186.006758946794" />
+      <inertia ixx="187.97215343815" ixy="-1.17446412092729E-15" ixz="-1.67737550768459E-15" iyy="8.44456814716498" iyz="1.16719929426561E-15" izz="186.006758946794" />
     </inertial>
     <visual>
       <origin
@@ -56,21 +49,15 @@
       </geometry>
     </collision>
   </link>
-  <link
-    name="Link_object">
+
+  <link name="Link_object">
     <inertial>
       <origin
         xyz="0 2.7756E-17 0"
         rpy="0 0 0" />
       <mass
         value="32" />
-      <inertia
-        ixx="0.21333"
-        ixy="0"
-        ixz="0"
-        iyy="1.8133"
-        iyz="0"
-        izz="1.8133" />
+      <inertia ixx="0.21333" ixy="0" ixz="0" iyy="1.8133" iyz="0" izz="1.8133" />
     </inertial>
     <visual>
       <origin
@@ -96,34 +83,25 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Joint_0_object"
-    type="fixed">
+
+  <joint name="Joint_0_object" type="fixed">
     <origin
       xyz="0 -0.01178 0.15"
       rpy="1.5708 0 1.5708" />
-    <parent
-      link="Link_base" />
-    <child
-      link="Link_object" />
+    <parent link="Link_base" />
+    <child link="Link_object" />
     <axis
       xyz="0 0 0" />
   </joint>
-  <link
-    name="Link_0_left">
+
+  <link name="Link_0_left">
     <inertial>
       <origin
         xyz="0.0257253404742335 0.267068280633129 -0.000422587192071511"
         rpy="0 0 0" />
       <mass
         value="44.0003903821512" />
-      <inertia
-        ixx="0.510206684006508"
-        ixy="-0.108718830381331"
-        ixz="0.00174239844646739"
-        iyy="0.693171643365736"
-        iyz="0.00089849322093645"
-        izz="0.72220726061105" />
+      <inertia ixx="0.510206684006508" ixy="-0.108718830381331" ixz="0.00174239844646739" iyy="0.693171643365736" iyz="0.00089849322093645" izz="0.72220726061105" />
     </inertial>
     <visual>
       <origin
@@ -149,34 +127,25 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Joint_0_left"
-    type="fixed">
+
+  <joint name="Joint_0_left" type="fixed">
     <origin
       xyz="0 -1.18 0.55"
       rpy="1.5708 0 1.5708" />
-    <parent
-      link="Link_base" />
-    <child
-      link="Link_0_left" />
+    <parent link="Link_base" />
+    <child link="Link_0_left" />
     <axis
       xyz="0 0 0" />
   </joint>
-  <link
-    name="Link_1_left">
+
+  <link name="Link_1_left">
     <inertial>
       <origin
         xyz="0.220100104353883 -0.000353201939205627 -0.0818491698881182"
         rpy="0 0 0" />
       <mass
         value="11.1204795622201" />
-      <inertia
-        ixx="0.0394927321862162"
-        ixy="-0.000101248256734392"
-        ixz="-0.0449284723464891"
-        iyy="0.528728735688798"
-        iyz="0.000116486713577521"
-        izz="0.539153697001847" />
+      <inertia ixx="0.0394927321862162" ixy="-0.000101248256734392" ixz="-0.0449284723464891" iyy="0.528728735688798" iyz="0.000116486713577521" izz="0.539153697001847" />
     </inertial>
     <visual>
       <origin
@@ -202,16 +171,13 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Joint_1_left"
-    type="revolute">
+
+  <joint name="Joint_1_left" type="revolute">
     <origin
       xyz="0.18 0.475 -0.0875"
-      rpy="0 0 0" />
-    <parent
-      link="Link_0_left" />
-    <child
-      link="Link_1_left" />
+      rpy="0 0 1.5708" />
+    <parent link="Link_0_left" />
+    <child link="Link_1_left" />
     <axis
       xyz="0 0 1" />
     <limit
@@ -220,21 +186,15 @@
       effort="300"
       velocity="3" />
   </joint>
-  <link
-    name="Link_2_left">
+
+  <link name="Link_2_left">
     <inertial>
       <origin
         xyz="0.19683 0.033549 0.088122"
         rpy="0 0 0" />
       <mass
         value="12.054" />
-      <inertia
-        ixx="0.049645"
-        ixy="-0.010896"
-        ixz="0.0012034"
-        iyy="0.1236"
-        iyz="0.00064683"
-        izz="0.13094" />
+      <inertia ixx="0.049645" ixy="-0.010896" ixz="0.0012034" iyy="0.1236" iyz="0.00064683" izz="0.13094" />
     </inertial>
     <visual>
       <origin
@@ -260,16 +220,13 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Joint_2_left"
-    type="revolute">
+
+  <joint name="Joint_2_left" type="revolute">
     <origin
       xyz="0.52 0 0"
       rpy="0 0 0" />
-    <parent
-      link="Link_1_left" />
-    <child
-      link="Link_2_left" />
+    <parent link="Link_1_left" />
+    <child link="Link_2_left" />
     <axis
       xyz="0 0 1" />
     <limit
@@ -278,21 +235,15 @@
       effort="300"
       velocity="3" />
   </joint>
-  <link
-    name="Link_3_left">
+
+  <link name="Link_3_left">
     <inertial>
       <origin
         xyz="0.017057385622842 -9.55062087193426E-08 0.0420061621566496"
         rpy="0 0 0" />
       <mass
         value="0.828810415472124" />
-      <inertia
-        ixx="0.000897507811096277"
-        ixy="-1.36925090097017E-09"
-        ixz="-3.31460866812027E-08"
-        iyy="0.00135949204117929"
-        iyz="-5.18258478194708E-11"
-        izz="0.00136817872211275" />
+      <inertia ixx="0.000897507811096277" ixy="-1.36925090097017E-09" ixz="-3.31460866812027E-08" iyy="0.00135949204117929" iyz="-5.18258478194708E-11" izz="0.00136817872211275" />
     </inertial>
     <visual>
       <origin
@@ -318,39 +269,29 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Joint_3_left"
-    type="revolute">
+
+  <joint name="Joint_3_left" type="revolute">
     <origin
       xyz="0.59841 0 0.0455"
       rpy="0 0 0" />
-    <parent
-      link="Link_2_left" />
-    <child
-      link="Link_3_left" />
-    <axis
-      xyz="0 0 1" />
+    <parent link="Link_2_left" />
+    <child link="Link_3_left" />
+    <axis xyz="0 0 1" />
     <limit
       lower="-3.142"
       upper="3.142"
       effort="300"
       velocity="3" />
   </joint>
-  <link
-    name="Link_0_right">
+
+  <link name="Link_0_right">
     <inertial>
       <origin
-        xyz="0 0 0"
+        xyz="0.0257253404742335 0.267068280633129 -0.000422587192071511"
         rpy="0 0 0" />
       <mass
-        value="0" />
-      <inertia
-        ixx="0"
-        ixy="0"
-        ixz="0"
-        iyy="0"
-        iyz="0"
-        izz="0" />
+        value="44.0003903821512" />
+      <inertia ixx="0.510206684006508" ixy="-0.108718830381331" ixz="0.00174239844646739" iyy="0.693171643365736" iyz="0.00089849322093645" izz="0.72220726061105" />
     </inertial>
     <visual>
       <origin
@@ -376,34 +317,25 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Joint_0_right"
-    type="fixed">
+
+  <joint name="Joint_0_right" type="fixed">
     <origin
       xyz="0 1.18 0.55"
       rpy="1.5708 0 -1.5708" />
-    <parent
-      link="Link_base" />
-    <child
-      link="Link_0_right" />
+    <parent link="Link_base" />
+    <child link="Link_0_right" />
     <axis
       xyz="0 0 0" />
   </joint>
-  <link
-    name="Link_1_right">
+
+  <link name="Link_1_right">
     <inertial>
       <origin
         xyz="0.2201 -0.0003532 -0.081849"
         rpy="0 0 0" />
       <mass
         value="11.12" />
-      <inertia
-        ixx="0.039493"
-        ixy="-0.00010125"
-        ixz="-0.044928"
-        iyy="0.52873"
-        iyz="0.00011649"
-        izz="0.53915" />
+      <inertia ixx="0.039493" ixy="-0.00010125" ixz="-0.044928" iyy="0.52873" iyz="0.00011649" izz="0.53915" />
     </inertial>
     <visual>
       <origin
@@ -429,39 +361,31 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Joint_1_right"
+
+  <joint name="Joint_1_right"
     type="revolute">
     <origin
       xyz="0.18 0.475 -0.0875"
-      rpy="0 0 0" />
-    <parent
-      link="Link_0_right" />
-    <child
-      link="Link_1_right" />
+      rpy="0 0 1.5708" />
+    <parent link="Link_0_right" />
+    <child link="Link_1_right" />
     <axis
-      xyz="0 0 -1" />
+      xyz="0 0 1" />
     <limit
       lower="-3.142"
       upper="3.142"
       effort="300"
       velocity="3" />
   </joint>
-  <link
-    name="Link_2_right">
+
+  <link name="Link_2_right">
     <inertial>
       <origin
         xyz="0.19683 0.033549 0.088122"
         rpy="0 0 0" />
       <mass
         value="12.054" />
-      <inertia
-        ixx="0.049645"
-        ixy="-0.010896"
-        ixz="0.0012034"
-        iyy="0.1236"
-        iyz="0.00064683"
-        izz="0.13094" />
+      <inertia ixx="0.049645" ixy="-0.010896" ixz="0.0012034" iyy="0.1236" iyz="0.00064683" izz="0.13094" />
     </inertial>
     <visual>
       <origin
@@ -487,39 +411,31 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Joint_2_right"
-    type="revolute">
+
+  <joint name="Joint_2_right" type="revolute">
     <origin
       xyz="0.52 0 0"
       rpy="0 0 0" />
-    <parent
-      link="Link_1_right" />
-    <child
-      link="Link_2_right" />
+    <parent link="Link_1_right" />
+    <child link="Link_2_right" />
     <axis
-      xyz="0 0 -1" />
+      xyz="0 0 1" />
     <limit
       lower="-3.142"
       upper="3.142"
       effort="300"
       velocity="3" />
   </joint>
-  <link
-    name="Link_3_right">
+
+
+  <link name="Link_3_right">
     <inertial>
       <origin
         xyz="0.0170573856228414 -9.55062089413872E-08 0.0420061621566493"
         rpy="0 0 0" />
       <mass
         value="0.828810415472125" />
-      <inertia
-        ixx="0.000897507811096279"
-        ixy="-1.36925089502359E-09"
-        ixz="-3.31460866811767E-08"
-        iyy="0.00135949204117929"
-        iyz="-5.18258481495072E-11"
-        izz="0.00136817872211275" />
+      <inertia ixx="0.000897507811096279" ixy="-1.36925089502359E-09" ixz="-3.31460866811767E-08" iyy="0.00135949204117929" iyz="-5.18258481495072E-11" izz="0.00136817872211275" />
     </inertial>
     <visual>
       <origin
@@ -545,18 +461,15 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Joint_3_right"
-    type="revolute">
+
+  <joint name="Joint_3_right" type="revolute">
     <origin
       xyz="0.59841 0 0.0455"
       rpy="0 0 0" />
-    <parent
-      link="Link_2_right" />
-    <child
-      link="Link_3_right" />
+    <parent link="Link_2_right" />
+    <child link="Link_3_right" />
     <axis
-      xyz="0 0 -1" />
+      xyz="0 0 1" />
     <limit
       lower="-3.142"
       upper="3.142"
