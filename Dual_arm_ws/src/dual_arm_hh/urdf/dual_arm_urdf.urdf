@@ -172,10 +172,11 @@
     </collision>
   </link>
 
+<!-- 1.5708 -->
   <joint name="Joint_1_left" type="revolute">
     <origin
       xyz="0.18 0.475 -0.0875"
-      rpy="0 0 1.5708" />
+      rpy="0 0 0" />
     <parent link="Link_0_left" />
     <child link="Link_1_left" />
     <axis
@@ -362,11 +363,12 @@
     </collision>
   </link>
 
+<!-- 1.5708 -->
   <joint name="Joint_1_right"
     type="revolute">
     <origin
       xyz="0.18 0.475 -0.0875"
-      rpy="0 0 1.5708" />
+      rpy="0 0 0" />
     <parent link="Link_0_right" />
     <child link="Link_1_right" />
     <axis
@@ -507,6 +509,7 @@
           <mechanicalReduction>1</mechanicalReduction>
       </actuator>
   </transmission>
+
   <transmission name="Link_1_right_trans">
       <type>transmission_interface/SimpleTransmission</type>
         <joint name="Joint_1_right">
