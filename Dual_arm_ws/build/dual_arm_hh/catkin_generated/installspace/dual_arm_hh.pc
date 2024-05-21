@@ -1,0 +1,8 @@
+prefix=/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_ws/install
+
+Name: dual_arm_hh
+Description: Description of dual_arm_hh
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: geometry_msgs roscpp rospy std_msgs

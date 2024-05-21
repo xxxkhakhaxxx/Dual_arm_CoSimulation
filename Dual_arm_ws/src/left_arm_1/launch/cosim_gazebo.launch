@@ -1,0 +1,27 @@
+<launch>
+
+    <!-- Launch Gazebo with the robot model -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name"    value="$(find left_arm_1)/worlds/empty.world"/>   <!-- Included Matlb-Gazebo-Plugin -->
+        <arg name="paused"        value="true"/>
+        <arg name="use_sim_time"  value="true"/>
+        <arg name="gui"           value="true"/>
+        <arg name="headless"      value="false"/>
+        <arg name="debug"         value="false"/>
+        <arg name="verbose"       value="true" />
+    </include>
+
+    <!-- Load the URDF into the ROS Parameter Server -->
+    <param name="robot_description" textfile="$(find left_arm_1)/urdf/left_arm_1.urdf" />
+
+    <!-- Spawn the robot model -->
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+          args="-urdf -model left_arm_1 -param robot_description"/>
+
+    <!-- Declare PID value each joint in the ROS parameter server -->
+    <rosparam param="/gazebo_ros_control/pid_gains/Joint_1_left"> {'p': 0.0, 'i': 0.0, 'd': 0.0} </rosparam>
+    <rosparam param="/gazebo_ros_control/pid_gains/Joint_2_left"> {'p': 0.0, 'i': 0.0, 'd': 0.0} </rosparam>
+    <rosparam param="/gazebo_ros_control/pid_gains/Joint_3_left"> {'p': 0.0, 'i': 0.0, 'd': 0.0} </rosparam>
+
+
+</launch>
