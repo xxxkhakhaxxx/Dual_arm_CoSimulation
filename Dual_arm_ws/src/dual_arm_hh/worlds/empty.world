@@ -109,11 +109,15 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>5 -5 2 0 0.275643 2.35619</pose>
+        <pose>4 0 0.9 0 0 3.141</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
     </gui>
-    <plugin name="GazeboPlugin" filename="/home/hung_2004/src/GazeboPlugin/export/lib/libGazeboCoSimPlugin.so"><portNumber>14581</portNumber></plugin>
+    <plugin
+      name="GazeboPlugin"
+      filename="/home/hung_2004/src/GazeboPlugin/export/lib/libGazeboCoSimPlugin.so">
+      <portNumber>14581</portNumber>
+    </plugin>
   </world>
 </sdf>

@@ -50,7 +50,7 @@
     </collision>
   </link>
 
-  <link name="Link_object">
+  <!-- <link name="Link_object">
     <inertial>
       <origin
         xyz="0 2.7756E-17 0"
@@ -86,13 +86,13 @@
 
   <joint name="Joint_0_object" type="fixed">
     <origin
-      xyz="0 -0.01178 0.15"
-      rpy="1.5708 0 1.5708" />
+      xyz="0 0 0.15"
+      rpy="0 0 0" />
     <parent link="Link_base" />
     <child link="Link_object" />
     <axis
       xyz="0 0 0" />
-  </joint>
+  </joint> -->
 
   <link name="Link_0_left">
     <inertial>
@@ -176,7 +176,7 @@
   <joint name="Joint_1_left" type="revolute">
     <origin
       xyz="0.18 0.475 -0.0875"
-      rpy="0 0 0" />
+      rpy="0 0 1.5708" />
     <parent link="Link_0_left" />
     <child link="Link_1_left" />
     <axis
@@ -368,7 +368,7 @@
     type="revolute">
     <origin
       xyz="0.18 0.475 -0.0875"
-      rpy="0 0 0" />
+      rpy="0 0 1.5708" />
     <parent link="Link_0_right" />
     <child link="Link_1_right" />
     <axis
@@ -489,6 +489,7 @@
           <mechanicalReduction>1</mechanicalReduction>
       </actuator>
   </transmission>
+  
   <transmission name="Link_2_left_trans">
       <type>transmission_interface/SimpleTransmission</type>
         <joint name="Joint_2_left">
@@ -546,5 +547,7 @@
       filename="libgazebo_ros_control.so">
       <robotNamespace>/</robotNamespace>
     </plugin>
+    <self_collide>true</self_collide>
   </gazebo>
+  
 </robot>
