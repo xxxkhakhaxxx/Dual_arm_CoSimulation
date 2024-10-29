@@ -1,0 +1,1 @@
+Export new .urdf package for dual_arm_MG_v9 robot in here
