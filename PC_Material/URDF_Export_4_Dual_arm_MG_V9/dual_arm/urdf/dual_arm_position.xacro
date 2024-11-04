@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="dual_arm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <link name="world"/>
+
+  <link name="link_base">
+    <inertial>
+      <origin
+        xyz="0.03796 1.7173E-16 0.25423"
+        rpy="0 0 0" />
+      <mass value="3.5758" />
+      <inertia
+        ixx="0.025052"
+        ixy="6.2851E-09"
+        ixz="-3.5439E-18"
+        iyy="0.023819"
+        iyz="1.6517E-20"
+        izz="0.025923" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find dual_arm)/meshes/link_base.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find dual_arm)/meshes/link_base.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="world_base" type="fixed">
+        <parent link="world"/>
+        <child link="link_base"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+  <link
+    name="link_11">
+    <inertial>
+      <origin
+        xyz="4.7288E-05 0.18267 -0.022599"
+        rpy="0 0 0" />
+      <mass
+        value="0.23338" />
+      <inertia
+        ixx="0.00020277"
+        ixy="1.1662E-08"
+        ixz="1.8729E-08"
+        iyy="7.5926E-05"
+        iyz="-3.0936E-07"
+        izz="0.00021878" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find dual_arm)/meshes/link_11.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find dual_arm)/meshes/link_11.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_11"
+    type="revolute">
+    <origin
+      xyz="0 -0.224 0.4465"
+      rpy="3.1416 0 0" />
+    <parent
+      link="link_base" />
+    <child
+      link="link_11" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="${-pi}"
+      upper="${pi}"
+      effort="10000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="link_21">
+    <inertial>
+      <origin
+        xyz="-0.00010797 0.18622 0.022644"
+        rpy="0 0 0" />
+      <mass
+        value="0.22941" />
+      <inertia
+        ixx="0.00020107"
+        ixy="-7.8197E-08"
+        ixz="1.9636E-07"
+        iyy="7.5839E-05"
+        iyz="3.3147E-07"
+        izz="0.0002169" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find dual_arm)/meshes/link_21.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find dual_arm)/meshes/link_21.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_21"
+    type="revolute">
+    <origin
+      xyz="0 0.253 -0.005"
+      rpy="0 0 0" />
+    <parent
+      link="link_11" />
+    <child
+      link="link_21" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="${-pi}"
+      upper="${pi}"
+      effort="10000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="link_31">
+    <inertial>
+      <origin
+        xyz="-4.4684E-08 0.051237 -0.022159"
+        rpy="0 0 0" />
+      <mass
+        value="0.071538" />
+      <inertia
+        ixx="3.2633E-05"
+        ixy="-1.8853E-11"
+        ixz="-1.0681E-10"
+        iyy="1.8609E-05"
+        iyz="3.3532E-06"
+        izz="3.2135E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find dual_arm)/meshes/link_31.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find dual_arm)/meshes/link_31.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_31"
+    type="revolute">
+    <origin
+      xyz="0 0.253 0.005"
+      rpy="0 0 0" />
+    <parent
+      link="link_21" />
+    <child
+      link="link_31" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="${-pi}"
+      upper="${pi}"
+      effort="10000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="link_12">
+    <inertial>
+      <origin
+        xyz="-4.0216E-05 0.18266 0.022592"
+        rpy="0 0 0" />
+      <mass
+        value="0.23333" />
+      <inertia
+        ixx="0.00020275"
+        ixy="-4.6038E-09"
+        ixz="-8.3576E-09"
+        iyy="7.5902E-05"
+        iyz="3.0086E-07"
+        izz="0.00021877" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find dual_arm)/meshes/link_12.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find dual_arm)/meshes/link_12.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_12"
+    type="revolute">
+    <origin
+      xyz="0 0.224 0.4465"
+      rpy="0 0 0" />
+    <parent
+      link="link_base" />
+    <child
+      link="link_12" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="${-pi}"
+      upper="${pi}"
+      effort="10000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="link_22">
+    <inertial>
+      <origin
+        xyz="4.7971E-05 0.18609 -0.022546"
+        rpy="0 0 0" />
+      <mass
+        value="0.22941" />
+      <inertia
+        ixx="0.00020059"
+        ixy="1.1043E-08"
+        ixz="1.9149E-08"
+        iyy="7.4854E-05"
+        iyz="-7.4492E-07"
+        izz="0.00021668" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find dual_arm)/meshes/link_22.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find dual_arm)/meshes/link_22.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_22"
+    type="revolute">
+    <origin
+      xyz="0 0.253 0.005"
+      rpy="0 0 0" />
+    <parent
+      link="link_12" />
+    <child
+      link="link_22" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="${-pi}"
+      upper="${pi}"
+      effort="10000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="link_32">
+    <inertial>
+      <origin
+        xyz="4.4684E-08 0.051237 0.022159"
+        rpy="0 0 0" />
+      <mass
+        value="0.071538" />
+      <inertia
+        ixx="3.2633E-05"
+        ixy="1.8853E-11"
+        ixz="-1.0681E-10"
+        iyy="1.8609E-05"
+        iyz="-3.3532E-06"
+        izz="3.2135E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find dual_arm)/meshes/link_32.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find dual_arm)/meshes/link_32.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_32"
+    type="revolute">
+    <origin
+      xyz="0 0.253 -0.005"
+      rpy="0 0 0" />
+    <parent
+      link="link_22" />
+    <child
+      link="link_32" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="${-pi}"
+      upper="${pi}"
+      effort="10000"
+      velocity="1000" />
+  </joint>
+
+  <transmission name="tran1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_11">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m1">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_21">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m2">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_31">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m3">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_12">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m4">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran5">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_22">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m5">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran6">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_32">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m6">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+</robot>
