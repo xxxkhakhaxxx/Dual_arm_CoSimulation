@@ -2,18 +2,17 @@
 <!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
      Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
-<robot
-  name="Dual_arm_HH">
+<robot   name="Dual_arm_HH">
 
 
   <!--  This is world setting  -->
   <!--  The robot's base should be rigidly attached to the world's link-->
-  <link name="world"/>  
-  <joint  name="base_joint"
-    type="fixed">
+  <link  name="world"/>  
+  <joint name="base_joint" type="fixed">
+    <origin rpy="0 0 0"
+            xyz="0 0 0"/>
     <parent link="world"/>
-    <child link="Link_base"/>
-    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <child  link="Link_base"/>
   </joint>
   
   <link name="Link_base">
@@ -94,6 +93,7 @@
       xyz="0 0 0" />
   </joint> -->
 
+<!-- ########## Left robot's setting ########## -->
   <link name="Link_0_left">
     <inertial>
       <origin
@@ -127,16 +127,6 @@
       </geometry>
     </collision>
   </link>
-
-  <joint name="Joint_0_left" type="fixed">
-    <origin
-      xyz="0 -1.18 0.55"
-      rpy="1.5708 0 1.5708" />
-    <parent link="Link_base" />
-    <child link="Link_0_left" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
 
   <link name="Link_1_left">
     <inertial>
@@ -172,22 +162,6 @@
     </collision>
   </link>
 
-<!-- 1.5708 -->
-  <joint name="Joint_1_left" type="revolute">
-    <origin
-      xyz="0.18 0.475 -0.0875"
-      rpy="0 0 1.5708" />
-    <parent link="Link_0_left" />
-    <child link="Link_1_left" />
-    <axis
-      xyz="0 0 1" />
-    <limit
-      lower="-3.142"
-      upper="3.142"
-      effort="300"
-      velocity="3" />
-  </joint>
-
   <link name="Link_2_left">
     <inertial>
       <origin
@@ -221,21 +195,6 @@
       </geometry>
     </collision>
   </link>
-
-  <joint name="Joint_2_left" type="revolute">
-    <origin
-      xyz="0.52 0 0"
-      rpy="0 0 0" />
-    <parent link="Link_1_left" />
-    <child link="Link_2_left" />
-    <axis
-      xyz="0 0 1" />
-    <limit
-      lower="-3.142"
-      upper="3.142"
-      effort="300"
-      velocity="3" />
-  </joint>
 
   <link name="Link_3_left">
     <inertial>
@@ -271,20 +230,7 @@
     </collision>
   </link>
 
-  <joint name="Joint_3_left" type="revolute">
-    <origin
-      xyz="0.59841 0 0.0455"
-      rpy="0 0 0" />
-    <parent link="Link_2_left" />
-    <child link="Link_3_left" />
-    <axis xyz="0 0 1" />
-    <limit
-      lower="-3.142"
-      upper="3.142"
-      effort="300"
-      velocity="3" />
-  </joint>
-
+<!-- ########## Right robot's setting ########## -->
   <link name="Link_0_right">
     <inertial>
       <origin
@@ -318,16 +264,6 @@
       </geometry>
     </collision>
   </link>
-
-  <joint name="Joint_0_right" type="fixed">
-    <origin
-      xyz="0 1.18 0.55"
-      rpy="1.5708 0 -1.5708" />
-    <parent link="Link_base" />
-    <child link="Link_0_right" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
 
   <link name="Link_1_right">
     <inertial>
@@ -363,23 +299,6 @@
     </collision>
   </link>
 
-<!-- 1.5708 -->
-  <joint name="Joint_1_right"
-    type="revolute">
-    <origin
-      xyz="0.18 0.475 -0.0875"
-      rpy="0 0 1.5708" />
-    <parent link="Link_0_right" />
-    <child link="Link_1_right" />
-    <axis
-      xyz="0 0 1" />
-    <limit
-      lower="-3.142"
-      upper="3.142"
-      effort="300"
-      velocity="3" />
-  </joint>
-
   <link name="Link_2_right">
     <inertial>
       <origin
@@ -413,22 +332,6 @@
       </geometry>
     </collision>
   </link>
-
-  <joint name="Joint_2_right" type="revolute">
-    <origin
-      xyz="0.52 0 0"
-      rpy="0 0 0" />
-    <parent link="Link_1_right" />
-    <child link="Link_2_right" />
-    <axis
-      xyz="0 0 1" />
-    <limit
-      lower="-3.142"
-      upper="3.142"
-      effort="300"
-      velocity="3" />
-  </joint>
-
 
   <link name="Link_3_right">
     <inertial>
@@ -464,20 +367,103 @@
     </collision>
   </link>
 
-  <joint name="Joint_3_right" type="revolute">
-    <origin
-      xyz="0.59841 0 0.0455"
-      rpy="0 0 0" />
-    <parent link="Link_2_right" />
-    <child link="Link_3_right" />
-    <axis
-      xyz="0 0 1" />
-    <limit
-      lower="-3.142"
-      upper="3.142"
-      effort="300"
-      velocity="3" />
-  </joint>
+<!-- ########## Left robot's joints ########## -->
+    <joint name="Joint_0_left" type="fixed">
+        <origin xyz="0 -1.18 0.55"
+                rpy="1.5708 0 1.5708" />
+        <parent link="Link_base" />
+        <child  link="Link_0_left" />
+        <axis   xyz="0 0 0" />
+    </joint>
+
+    <!-- pi/2 = 1.5708 -->
+    <joint name="Joint_1_left" type="revolute">
+        <origin xyz="0.18 0.475 -0.0875"
+                rpy="0 0 0" />
+        <parent link="Link_0_left" />
+        <child  link="Link_1_left" />
+        <axis   xyz="0 0 1" />
+        <dynamics  damping="0.1" friction="0.1"/>
+        <limit  lower="-3.142"
+                upper="3.142"
+                effort="500"
+                velocity="12.56" />
+    </joint>
+
+    <joint name="Joint_2_left" type="revolute">
+        <origin xyz="0.52 0 0"
+                rpy="0 0 0" />
+        <parent link="Link_1_left" />
+        <child  link="Link_2_left" />
+        <axis   xyz="0 0 1" />
+        <dynamics  damping="0.1" friction="0.1"/>
+        <limit  lower="-3.142"
+                upper="3.142"
+                effort="300"
+                velocity="12.56" />
+    </joint>
+
+    <joint name="Joint_3_left" type="revolute">
+        <origin xyz="0.59841 0 0.0455"
+                rpy="0 0 0" />
+        <parent link="Link_2_left" />
+        <child  link="Link_3_left" />
+        <axis   xyz="0 0 1" />
+        <dynamics  damping="0.1" friction="0.1"/>
+        <limit  lower="-3.142"
+                upper="3.142"
+                effort="100"
+                velocity="12.56" />
+    </joint>
+
+<!-- ########## Right robot's joints ########## -->
+    <joint name="Joint_0_right" type="fixed">
+        <origin xyz="0 1.18 0.55"
+                rpy="1.5708 0 -1.5708" />
+        <parent link="Link_base" />
+        <child  link="Link_0_right" />
+        <axis   xyz="0 0 0" />
+    </joint>
+
+    <!-- pi/2 = 1.5708 -->
+    <joint name="Joint_1_right" type="revolute">
+        <origin xyz="0.18 0.475 -0.0875"
+                rpy="0 0 0" />
+        <parent link="Link_0_right" />
+        <child  link="Link_1_right" />
+        <axis   xyz="0 0 1" />
+        <dynamics  damping="0.1" friction="0.1"/>
+        <limit  lower="-3.142"
+                upper="3.142"
+                effort="500"
+                velocity="12.56" />
+    </joint>
+
+    <joint name="Joint_2_right" type="revolute">
+        <origin xyz="0.52 0 0"
+                rpy="0 0 0" />
+        <parent link="Link_1_right" />
+        <child  link="Link_2_right" />
+        <axis   xyz="0 0 1" />
+        <dynamics  damping="0.1" friction="0.1"/>
+        <limit  lower="-3.142"
+                upper="3.142"
+                effort="300"
+                velocity="12.56" />
+    </joint>
+
+    <joint name="Joint_3_right" type="revolute">
+        <origin xyz="0.59841 0 0.0455"
+                rpy="0 0 0" />
+        <parent link="Link_2_right" />
+        <child  link="Link_3_right" />
+        <axis   xyz="0 0 1" />
+        <dynamics  damping="0.1" friction="0.1"/>
+        <limit  lower="-3.142"
+                upper="3.142"
+                effort="100"
+                velocity="12.56" />
+    </joint>
 
 <!-- Force control setting -->
     <transmission name="Link_1_left_trans">
@@ -545,7 +531,7 @@
                 filename="libgazebo_ros_control.so">
             <robotNamespace>/</robotNamespace>
         </plugin>
-        <self_collide>true</self_collide>
+        <self_collide>false</self_collide>
     </gazebo>
   
 </robot>

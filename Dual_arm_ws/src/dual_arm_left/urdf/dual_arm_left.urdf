@@ -145,6 +145,7 @@
       </geometry>
     </collision>
   </link>
+      <!-- pi/2 = 1.5708 -->
   <joint
     name="joint_1"
     type="revolute">
@@ -157,11 +158,13 @@
       link="link_1" />
     <axis
       xyz="0 0 1" />
+    <dynamics
+      damping="0.1" friction="0.1"/>
     <limit
       lower="-3.14"
       upper="3.14"
-      effort="500"
-      velocity="12.56" />
+      effort="5000"
+      velocity="120.56" />
   </joint>
   <link
     name="link_2">
@@ -215,11 +218,13 @@
       link="link_2" />
     <axis
       xyz="0 0 1" />
+    <dynamics
+      damping="0.1" friction="0.1"/>
     <limit
       lower="-3.14"
       upper="3.14"
-      effort="300"
-      velocity="12.56" />
+      effort="3000"
+      velocity="120.56" />
   </joint>
   <link
     name="link_3">
@@ -273,11 +278,13 @@
       link="link_3" />
     <axis
       xyz="0 0 1" />
+    <dynamics
+      damping="0.1" friction="0.1"/>
     <limit
       lower="-3.14"
       upper="3.14"
-      effort="100"
-      velocity="12.56" />
+      effort="1000"
+      velocity="120.56" />
   </joint>
 
 
@@ -317,6 +324,6 @@
               filename="libgazebo_ros_control.so">
           <robotNamespace>/</robotNamespace>
       </plugin>
-      <self_collide>true</self_collide>
+      <self_collide>false</self_collide>
   </gazebo>
 </robot>
