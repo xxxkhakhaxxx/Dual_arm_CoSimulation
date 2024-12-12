@@ -1,0 +1,8 @@
+prefix=/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_MG_ws/install
+
+Name: dual_arm
+Description: Description of dual_arm
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

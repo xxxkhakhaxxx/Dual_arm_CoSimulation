@@ -1,0 +1,22 @@
+<launch>
+
+    <!-- Launch Gazebo with the robot model -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name"    value="$(find dual_arm)/world/world.world"/>   <!-- Included Matlb-Gazebo-Plugin -->
+        <arg name="paused"        value="true"/>
+        <arg name="use_sim_time"  value="true"/>
+        <arg name="gui"           value="true"/>
+        <arg name="headless"      value="false"/>
+        <arg name="debug"         value="false"/>
+        <arg name="verbose"       value="true" />
+    </include>
+
+    <!-- Load the URDF into the ROS Parameter Server -->
+    <!-- <param name="robot_description" textfile="$(find dual_arm)/urdf/dual_arm_urdf.urdf" /> -->
+    <param name="robot_description" command="$(find xacro)/xacro '$(find dual_arm)/urdf/dual_arm_effort.xacro'"/>
+
+    <!-- Spawn the robot model -->
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+          args="-urdf -model dual_arm_mg -param robot_description"/>
+
+</launch>

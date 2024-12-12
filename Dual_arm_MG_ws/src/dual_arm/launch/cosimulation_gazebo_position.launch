@@ -1,0 +1,36 @@
+<launch>
+
+    <!-- Launch Gazebo with the robot model -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name"    value="$(find dual_arm)/world/world.world"/>   <!-- Included Matlb-Gazebo-Plugin -->
+        <arg name="paused"        value="true"/>
+        <arg name="use_sim_time"  value="true"/>
+        <arg name="gui"           value="true"/>
+        <arg name="headless"      value="false"/>
+        <arg name="debug"         value="false"/>
+        <arg name="verbose"       value="true" />
+    </include>
+
+    <!-- Load the URDF into the ROS Parameter Server -->
+    <!-- <param name="robot_description" textfile="$(find dual_arm)/urdf/dual_arm_urdf.urdf" /> -->
+    <param name="robot_description" command="$(find xacro)/xacro '$(find dual_arm)/urdf/dual_arm_position.xacro'"/>
+
+    <!-- Spawn the robot model -->
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+          args="-urdf -model dual_arm_mg -param robot_description"/>
+
+    <!-- Declare PID value each joint in the ROS parameter server -->
+    <rosparam param="/gazebo_ros_control/pid_gains/Joint_1_left"> {'p': 0.0, 'i': 0.0, 'd': 0.0} </rosparam>
+    <rosparam param="/gazebo_ros_control/pid_gains/Joint_2_left"> {'p': 0.0, 'i': 0.0, 'd': 0.0} </rosparam>
+    <rosparam param="/gazebo_ros_control/pid_gains/Joint_3_left"> {'p': 0.0, 'i': 0.0, 'd': 0.0} </rosparam>
+    <rosparam param="/gazebo_ros_control/pid_gains/Joint_1_right"> {'p': 0.0, 'i': 0.0, 'd': 0.0} </rosparam>
+    <rosparam param="/gazebo_ros_control/pid_gains/Joint_2_right"> {'p': 0.0, 'i': 0.0, 'd': 0.0} </rosparam>
+    <rosparam param="/gazebo_ros_control/pid_gains/Joint_3_right"> {'p': 0.0, 'i': 0.0, 'd': 0.0} </rosparam>
+
+    <!-- Reset Gazebo camera -->
+    <!-- <node pkg="gazebo_ros" type="spawn_model" name="reset_camera" output="screen"
+          args="-urdf -model reset_camera -param robot_description"/>
+    <node pkg="rospy_tutorials" type="talker" name="camera_reset">
+          <param name="inittial_pose" value="0 0 2.5 0 1.5708 -1.5708" />
+    </node> -->
+</launch>
