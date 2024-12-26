@@ -17,6 +17,17 @@
 
     <!-- Spawn the robot model -->
     <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-          args="-urdf -model dual_arm_mg -param robot_description"/>
+          args="-urdf -model dual_arm_mg -param robot_description
+          
+                -J joint_11 -1.57
+                -J joint_21 0.0
+                -J joint_31 0.0
+                -J joint_12 0.0
+                -J joint_22 0.0
+                -J joint_32 0.0
+                -unpause"/> 
 
+    <!-- sudo gedit /opt/ros/noetic/lib/python3/dist-packages/roslaunch/nodeprocess.py  -->
+    <!-- DEFAULT_TIMEOUT_SIGINT  = 15.0 #seconds
+    DEFAULT_TIMEOUT_SIGTERM = 2.0 #seconds -->
 </launch>
