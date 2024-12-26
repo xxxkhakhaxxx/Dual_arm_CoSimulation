@@ -7,5 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export PKG_CONFIG_PATH="/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_MG_ws/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD='/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_MG_ws/build'

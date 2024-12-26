@@ -132,6 +132,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_MG_ws/build/gtest/cmake_install.cmake")
   include("/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_MG_ws/build/dual_arm/cmake_install.cmake")
+  include("/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_MG_ws/build/dual_arm_mg_left/cmake_install.cmake")
 
 endif()
 

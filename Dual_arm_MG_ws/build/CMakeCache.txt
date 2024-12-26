@@ -413,6 +413,12 @@ dual_arm_left_BINARY_DIR:STATIC=/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_M
 dual_arm_left_SOURCE_DIR:STATIC=/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_MG_ws/src/dual_arm_left
 
 //Value Computed by CMake
+dual_arm_mg_left_BINARY_DIR:STATIC=/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_MG_ws/build/dual_arm_mg_left
+
+//Value Computed by CMake
+dual_arm_mg_left_SOURCE_DIR:STATIC=/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_MG_ws/src/dual_arm_mg_left
+
+//Value Computed by CMake
 gmock_BINARY_DIR:STATIC=/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_MG_ws/build/gtest/googlemock
 
 //Dependencies for the target
@@ -609,7 +615,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

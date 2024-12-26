@@ -14,9 +14,12 @@ set(CMAKE_MAKEFILE_DEPENDS
   "catkin_generated/installspace/_setup_util.py"
   "catkin_generated/order_packages.cmake"
   "dual_arm/catkin_generated/package.cmake"
+  "dual_arm_mg_left/catkin_generated/package.cmake"
   "/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_MG_ws/src/CMakeLists.txt"
   "/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_MG_ws/src/dual_arm/CMakeLists.txt"
   "/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_MG_ws/src/dual_arm/package.xml"
+  "/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_MG_ws/src/dual_arm_mg_left/CMakeLists.txt"
+  "/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_MG_ws/src/dual_arm_mg_left/package.xml"
   "/opt/ros/noetic/share/catkin/cmake/all.cmake"
   "/opt/ros/noetic/share/catkin/cmake/assert.cmake"
   "/opt/ros/noetic/share/catkin/cmake/atomic_configure_file.cmake"
@@ -155,6 +158,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "gtest/googlemock/CMakeFiles/CMakeDirectoryInformation.cmake"
   "gtest/googletest/CMakeFiles/CMakeDirectoryInformation.cmake"
   "dual_arm/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "dual_arm_mg_left/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:

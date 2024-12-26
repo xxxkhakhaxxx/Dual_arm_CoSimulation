@@ -43,3 +43,10 @@
 /home/hung_2004/Dual_arm_CoSimulation/Dual_arm_MG_ws/build/dual_arm/CMakeFiles/edit_cache.dir
 /home/hung_2004/Dual_arm_CoSimulation/Dual_arm_MG_ws/build/dual_arm/CMakeFiles/test.dir
 /home/hung_2004/Dual_arm_CoSimulation/Dual_arm_MG_ws/build/dual_arm/CMakeFiles/_catkin_empty_exported_target.dir
+/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_MG_ws/build/dual_arm_mg_left/CMakeFiles/install/strip.dir
+/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_MG_ws/build/dual_arm_mg_left/CMakeFiles/install/local.dir
+/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_MG_ws/build/dual_arm_mg_left/CMakeFiles/install.dir
+/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_MG_ws/build/dual_arm_mg_left/CMakeFiles/list_install_components.dir
+/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_MG_ws/build/dual_arm_mg_left/CMakeFiles/rebuild_cache.dir
+/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_MG_ws/build/dual_arm_mg_left/CMakeFiles/edit_cache.dir
+/home/hung_2004/Dual_arm_CoSimulation/Dual_arm_MG_ws/build/dual_arm_mg_left/CMakeFiles/test.dir
